@@ -1,9 +1,10 @@
 import React from 'react';
 //need to make
+import Signup from './signup';
 import Header from './header';
 import Restaurant from './restaurant';
 // import Container from './container'; 
-import { selectRestaurant } from '../actions';
+import { selectRestaurant,  createUser} from '../actions';
 import { connect } from 'react-redux';
 
 export class App extends React.Component {
@@ -11,6 +12,10 @@ export class App extends React.Component {
   selectRestaurant(event) {
     event.preventDefault();
     this.props.dispatch(selectRestaurant());
+  }
+  createUser(event) {
+    event.preventDefault();
+    this.props.dispatch(createUser());
   }
 
   render() {
@@ -21,6 +26,7 @@ export class App extends React.Component {
           <Header />
 
           <div><button onClick={e => this.selectRestaurant(e)}>restaurant 1</button></div>
+          <div><button onClick={e => this.createUser(e)}>Sign Up!</button></div>
         </div>
       );
     } else if (this.props.route === 'restaurant') {
@@ -30,6 +36,13 @@ export class App extends React.Component {
         </div>
       );
     }
+     else if (this.props.route === 'signup') {
+       return (
+         <div> 
+           <Signup />
+           </div>
+       )
+     }
   }
 };
 

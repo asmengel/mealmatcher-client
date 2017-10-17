@@ -1,5 +1,7 @@
 // import thunk from 'redux-thunk';
 // https://github.com/gaearon/redux-thunk
+
+// signup
 export const ADD_USER = 'ADD_USER';
 export const addUser = (firstName, lastName, username, password) => ({
   type: ADD_USER, 
@@ -32,9 +34,10 @@ export const CONFIRM_RESERVATION = 'CONFIRM_RESERVATION';
 export const confirmReservation = () => ({
 
 });
-
+// signup button action
 export const CREATE_USER = 'CREATE_USER';
 export const createUser = () => ({
+  type: CREATE_USER
 
 });
 
