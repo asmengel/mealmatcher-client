@@ -53,14 +53,19 @@ export const invite = () => ({
 
 });
 
-export const fetchCheeses = () => (dispatch) => {
-  dispatch(fetchCheesesRequest());
-  return fetch(`${SERVER_URL}`)
-      .then(res => {
-          if (!res.ok) {
-              return dispatch(fetchCheesesError(res.statusText));
-          }
-          return res.json()
-      })
-      .then(cheeses => dispatch(fetchCheesesSuccess(cheeses)))
-}
+export const TOGGLE_HOMEPAGE = 'TOGGLE_HOMEPAGE';
+export const toggleHomepage = () => ({
+  type: TOGGLE_HOMEPAGE
+});
+
+// export const fetchCheeses = () => (dispatch) => {
+//   dispatch(fetchCheesesRequest());
+//   return fetch(`${SERVER_URL}`)
+//       .then(res => {
+//           if (!res.ok) {
+//               return dispatch(fetchCheesesError(res.statusText));
+//           }
+//           return res.json()
+//       })
+//       .then(cheeses => dispatch(fetchCheesesSuccess(cheeses)))
+// }
