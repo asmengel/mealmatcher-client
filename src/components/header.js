@@ -13,11 +13,12 @@ export function Header(props) {
     }
 
     return (
-        <header>
+        <Homepage />
+        // <header>
             
-            {homepage}
-            <h1>Meal Matcher</h1>
-        </header>
+        //     {homepage}
+        //     <h1>Meal Matcher</h1>
+        // </header>
     );
 };
 

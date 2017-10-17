@@ -1,4 +1,4 @@
-import {createState, applyMiddleware} from 'redux';
+import {createStore, applyMiddleware} from 'redux';
 import thunk from 'redux-thunk';
-import {restaurantReducer} from './reducer';
+import {restaurantReducer} from './reducers';
 export default createStore(restaurantReducer, applyMiddleware(thunk));

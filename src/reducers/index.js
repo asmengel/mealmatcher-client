@@ -1,14 +1,15 @@
-import * as actions from '..actions/index';
+import {SELECT_RESTAURANT} from '../actions';
 
 const initialState = {
-  restaurants:[]
+  restaurants:[],
+  route: 'homepage', // restaurant || 
 }
 
 export const restaurantReducer = (state = initialState, action) => {
-  if (action.type==='RETURN_HOMEPAGE'){
+  if (action.type===SELECT_RESTAURANT){
     return Object.assign({}, state, {
-      restaurants:[]
-    })   
+      route: "restaurant"
+       })   
   }
   return state;
 }

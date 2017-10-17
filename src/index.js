@@ -8,7 +8,7 @@ import App from './components/app';
 import registerServiceWorker from './registerServiceWorker';
 import { Provider } from 'react-redux'; 
 
-const store = createStore(applyMiddleware(thunk));
+import store from './store';
 
 ReactDOM.render(
     <Provider store={store}>
