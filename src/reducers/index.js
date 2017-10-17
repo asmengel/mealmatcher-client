@@ -1,4 +1,4 @@
-import {SELECT_RESTAURANT} from '../actions';
+import {SELECT_RESTAURANT, RETURN_HOMEPAGE} from '../actions';
 
 const initialState = {
   restaurants:[],
@@ -10,6 +10,12 @@ export const restaurantReducer = (state = initialState, action) => {
     return Object.assign({}, state, {
       route: "restaurant"
        })   
+  
+  }
+  else if (action.type === RETURN_HOMEPAGE) {
+    return Object.assign({}, state, {
+      route: "homepage"
+    })
   }
   return state;
 }

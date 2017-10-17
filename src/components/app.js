@@ -27,8 +27,6 @@ export class App extends React.Component {
       return (
         <div>
           <Restaurant />
-
-          <div><button onClick={e => this.returnHomepage(e)}>go home</button></div>
         </div>
       );
     }
