@@ -11,7 +11,7 @@ export const signIn = (username, password) => ({
   type: SIGN_IN,
   username, password
 });
-
+// does not arguments becuse no user data required
 export const SELECT_RESTAURANT = 'SELECT_RESTAURANT';
 export const selectRestaurant = () => ({
   type: SELECT_RESTAURANT
