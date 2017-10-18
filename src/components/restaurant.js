@@ -2,13 +2,13 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Header from './header';
 // import { toggleHomepage } from '../actions';
-import {returnHomeReducer} from '../reducers';
+import { returnHomeReducer } from '../reducers';
 import { returnHomepage } from '../actions';
 export class Restaurant extends React.Component {
-// returnHomepage(event) {
-//   event.preventDefault();
-//   this.props.dispatch(returnHomepage());
-// }
+  // returnHomepage(event) {
+  //   event.preventDefault();
+  //   this.props.dispatch(returnHomepage());
+  // }
 
   render() {
     return (

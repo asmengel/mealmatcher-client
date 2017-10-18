@@ -1,10 +1,10 @@
 // import thunk from 'redux-thunk';
 // https://github.com/gaearon/redux-thunk
-
+import {API_BASE_URL} from '../config';
 // signup
 export const ADD_USER = 'ADD_USER';
 export const addUser = (firstName, lastName, username, password) => ({
-  type: ADD_USER, 
+  type: ADD_USER,
   firstName, lastName, username, password
 });
 
@@ -19,10 +19,33 @@ export const selectRestaurant = () => ({
   type: SELECT_RESTAURANT
 });
 
-export const RETURN_HOMEPAGE = 'RETURN_HOMPAGE';
-export const returnHomepage = () => ({
-  type: RETURN_HOMEPAGE
+export const RETURN_HOMEPAGE_SUCCESS = 'RETURN_HOMPAGE_SUCCESS';
+export const returnHomepageSuccess = () => ({
+  type: RETURN_HOMEPAGE_SUCCESS
 });
+
+export const RETURN_HOMEPAGE_REQUEST = 'RETURN_HOMPAGE_REQUEST';
+export const returnHomepageRequest = () => ({
+  type: RETURN_HOMEPAGE_REQUEST
+});
+
+export const RETURN_HOMEPAGE_ERROR = 'RETURN_HOMPAGE_ERROR';
+export const returnHomepageError = () => ({
+  type: RETURN_HOMEPAGE_ERROR
+});
+
+ export const returnHomepage= () => (dispatch) => {
+    dispatch(returnHomepageRequest());
+    return fetch(`${API_BASE_URL}`)//incomplete endpoint
+        .then(res => {
+            if (!res.ok) {
+                return dispatch(returnHomepageError(res.statusText));
+            }
+            return res.json()
+        })
+        .then(restaurants => dispatch(returnHomepageSuccess(restaurants)))
+        .catch(error => dispatch(returnHomepageError(error)))
+}
 
 
 export const SCHEDULE_MEAL = 'SCHEDULE_MEAL';

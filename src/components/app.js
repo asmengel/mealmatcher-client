@@ -24,7 +24,6 @@ export class App extends React.Component {
     if (this.props.route === 'homepage') {
       return (
         <div>
-          
           <Homepage />
         </div>
       );
@@ -35,20 +34,20 @@ export class App extends React.Component {
         </div>
       );
     }
-     else if (this.props.route === 'signup') {
-       return (
-         <div> 
-           <Signup />
-           </div>
-       )
-     }
-     else if (this.props.route === 'signin') {
-       return (
-         <div>
-           <Signin />
-           </div>
-       )
-     }
+    else if (this.props.route === 'signup') {
+      return (
+        <div>
+          <Signup />
+        </div>
+      )
+    }
+    else if (this.props.route === 'signin') {
+      return (
+        <div>
+          <Signin />
+        </div>
+      )
+    }
   }
 };
 
