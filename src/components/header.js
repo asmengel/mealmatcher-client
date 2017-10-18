@@ -2,8 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { signIn, createUser, returnHomepageSuccess} from '../actions';
 import { returnHomeReducer, } from '../reducers';
-// import TopNav from './top-nav';//
-//import Homepage from './homepage';//
 
 // import './header.css';
 
@@ -37,24 +35,5 @@ export class Header extends React.Component {
     }
 }
 
-// export function Header(props) {
-//     let homepage;
-//     if (props.showHomepage) {
-//         homepage = <Homepage />;
-//     }
-
-//     return (
-//         <Homepage />
-//         // <header>
-
-//         //     {homepage}
-//         //     <h1>Meal Matcher</h1>
-//         // </header>
-//     );
-// };
-
-// const mapStateToProps = state => ({
-//     showInfoModal: state.showHomepage
-// });
 
 export default connect()(Header);

@@ -37,23 +37,6 @@ export const returnHomepageError = (err) => ({
   error: err
 });
 
-// export const returnHomepage = () => (dispatch) => {
-  
-//   dispatch(returnHomepageRequest());
-//   return fetch(`http://localhost:8080/api/restaurants`)//incomplete endpoint
-//     .then(res => {
-//       if (!res.ok) {
-//         return dispatch(returnHomepageError(res.statusText));
-//       }
-//       return res.json()
-//     })
-//     .then(restaurants => {
-//       console.log(restaurants);
-//       return dispatch(dataPusher(restaurants))}
-//     )
-//     // .then(restaurants => dispatch(returnHomepageSuccess(restaurants)))
-//     .catch(error => dispatch(returnHomepageError(error)))
-// }
 
 export function returnHomepage() {
   return function(dispatch) {
@@ -76,12 +59,6 @@ export function returnHomepage() {
 }
 
 export const DATA_PUSHER = 'DATA_PUSHER';
-// export const dataPusher = (restaurants) => dispatch => {
-//   type: DATA_PUSHER,
-//   restaurants
-
-// }
-
 export function dataPusher(restaurants) {
   return {
     type: DATA_PUSHER,

@@ -12,20 +12,24 @@ export class Homepage extends React.Component {
     }
 
 
-    // selectRestaurant(event) {
-    //     event.preventDefault();
-    //     this.props.dispatch(selectRestaurant());
-    // }
+    selectRestaurant(event) {
+        event.preventDefault();
+        this.props.dispatch(selectRestaurant());
+    }
 
-    // dataPusher(event) {
-    //     event.preventDefault();
-    //     this.props.dispatch(dataPusher());
-    // }
 
+    // add URL and 
     lister() {
         return this.props.restaurants.map((val,index)=>{
             return (
-                <li key={index}>{val.name}</li>
+                <div key={index}>
+                <li>{val.name}</li>
+                <li>{val.address}</li>
+                <li>{val.hours}</li>
+                <li>{val.price}</li>
+                <li>{val.cuisine}</li>
+                <button onClick={e => this.selectRestaurant(e)}>More Details</button>
+                </div>
             )
         })
     }
@@ -38,35 +42,15 @@ export class Homepage extends React.Component {
 
                 {<Header />}
                 <p> above is an unstyled nav bar</p>
-                {/* <li>{this.props.map((restaurant, idx) => {
-
-                    <li key={idx}>{restaurant}</li>
-                })}</li>  */}
-                
-                {/* {<ul>{this.lister()}</ul>} */}
-
-                {this.props.restaurants.map((val,index)=>{
-            return (
-                <li key={index}>{val.name}</li>
-            )
-        })}
-
-                
                 <p> top 20 restaurants will go below </p>
+                
+                 {<ul>{this.lister()}</ul>} 
 
-                {/* <div><h3>{this.props.restaurants}</h3>
-                    <ul>
-
-                    </ul><button onClick={e => this.selectRestaurant(e)}>More Details</button></div> */}
-
-
-                <div> Local Fav's
-                </div>
             </div>
         );
 
         }
-}
+    }
 const mapStateToProps = state => ({
     restaurants: state.restaurants
 })
@@ -76,5 +60,4 @@ function mapper(state) {
         restaurants: state.restaurants
     }
 }
-// export default connect(mapStateToProps)(Homepage);
 export default connect(mapper)(Homepage);
