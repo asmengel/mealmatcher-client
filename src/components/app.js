@@ -1,32 +1,31 @@
 import React from 'react';
-//need to make
+import { connect } from 'react-redux';
+import Signin from './signin';
 import Signup from './signup';
 import Header from './header';
 import Restaurant from './restaurant';
+import Homepage from './homepage';
 // import Container from './container'; 
-import { selectRestaurant,  createUser} from '../actions';
-import { connect } from 'react-redux';
+//import { selectRestaurant,  createUser} from '../actions';
+
 
 export class App extends React.Component {
   // eventDemo(e) { console.log('clicked me') }
-  selectRestaurant(event) {
-    event.preventDefault();
-    this.props.dispatch(selectRestaurant());
-  }
-  createUser(event) {
-    event.preventDefault();
-    this.props.dispatch(createUser());
-  }
-
+  // selectRestaurant(event) {
+  //   event.preventDefault();
+  //   this.props.dispatch(selectRestaurant());
+  // }
+  // createUser(event) {
+  //   event.preventDefault();
+  //   this.props.dispatch(createUser());
+  // }
   render() {
 
     if (this.props.route === 'homepage') {
       return (
         <div>
-          <Header />
-
-          <div><button onClick={e => this.selectRestaurant(e)}>restaurant 1</button></div>
-          <div><button onClick={e => this.createUser(e)}>Sign Up!</button></div>
+          
+          <Homepage />
         </div>
       );
     } else if (this.props.route === 'restaurant') {
@@ -40,6 +39,13 @@ export class App extends React.Component {
        return (
          <div> 
            <Signup />
+           </div>
+       )
+     }
+     else if (this.props.route === 'signin') {
+       return (
+         <div>
+           <Signin />
            </div>
        )
      }

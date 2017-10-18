@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-
+import Header from './header';
 // import { toggleHomepage } from '../actions';
 import {returnHomeReducer} from '../reducers';
 import { returnHomepage } from '../actions';
@@ -13,13 +13,14 @@ returnHomepage(event) {
   render() {
     return (
       <div className="restaurant">
-
+        <Header />
+        <p> Nav Bar Above ^^^^^^</p>
         <ul>
-          <p>what</p>
+          <h3>The World's Greatest Restaurant!!</h3>
 
           <div><button onClick={e => this.returnHomepage(e)}>go home</button></div>
         </ul>
-        <div> new menu
+        <div> Restaurant data will go here
                 </div>
       </div>
     );

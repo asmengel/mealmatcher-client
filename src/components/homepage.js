@@ -1,22 +1,28 @@
 import React from 'react';
 import { connect } from 'react-redux';
-
-import { toggleHomepage } from '../actions';
+import Header from './header';
+import { selectRestaurant } from '../actions';
 
 // import './homepage.css';
 
 export class Homepage extends React.Component {
-
+selectRestaurant(event) {
+    event.preventDefault();
+    this.props.dispatch(selectRestaurant());
+}
 
     render() {
         return (
             <div className="homepage">
                 
-                <ul>
-                    <li><a className="sign-up" href="#" onClick={e => this()}> Sign-up</a> </li>
-                    <li><a className="login" href="#" onClick={e => this()}> Login</a> </li>
-                </ul>
-                <div> Restaurant Container
+                <Header />
+                <p> above is an unstyled nav bar</p>
+
+                <p> top 20 restaurants will go below </p>
+                <div><button onClick={e => this.selectRestaurant(e)}>More Details</button></div>
+                
+                
+                <div> Local Fav's
                 </div>
             </div>
         );
