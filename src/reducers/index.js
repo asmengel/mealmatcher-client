@@ -1,8 +1,9 @@
-import { SELECT_RESTAURANT, RETURN_HOMEPAGE_SUCCESS, CREATE_USER, SIGN_IN } from '../actions';
+import { SELECT_RESTAURANT, RETURN_HOMEPAGE_SUCCESS, CREATE_USER, SIGN_IN, DATA_PUSHER } from '../actions';
 
 const initialState = {
   restaurants: [],
   route: 'homepage', // restaurant || signup || signin
+
 }
 
 export const restaurantReducer = (state = initialState, action) => {
@@ -26,5 +27,11 @@ export const restaurantReducer = (state = initialState, action) => {
       route: "signin"
     })
   }
+  else if (action.type === DATA_PUSHER) {
+    return Object.assign({}, state, {
+      restaurants: action.restaurants
+    })
+  }
   return state;
 }
+

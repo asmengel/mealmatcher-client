@@ -1,6 +1,6 @@
 // import thunk from 'redux-thunk';
 // https://github.com/gaearon/redux-thunk
-import {API_BASE_URL} from '../config';
+import { API_BASE_URL } from '../config';
 // signup
 export const ADD_USER = 'ADD_USER';
 export const addUser = (firstName, lastName, username, password) => ({
@@ -34,19 +34,24 @@ export const returnHomepageError = () => ({
   type: RETURN_HOMEPAGE_ERROR
 });
 
- export const returnHomepage= () => (dispatch) => {
-    dispatch(returnHomepageRequest());
-    return fetch(`${API_BASE_URL}`)//incomplete endpoint
-        .then(res => {
-            if (!res.ok) {
-                return dispatch(returnHomepageError(res.statusText));
-            }
-            return res.json()
-        })
-        .then(restaurants => dispatch(returnHomepageSuccess(restaurants)))
-        .catch(error => dispatch(returnHomepageError(error)))
+export const returnHomepage = () => (dispatch) => {
+  dispatch(returnHomepageRequest());
+  return fetch(`mongodb://restaurants:Restaurants@ds125195.mlab.com:25195/restaurants`)//incomplete endpoint
+    .then(res => {
+      if (!res.ok) {
+        return dispatch(returnHomepageError(res.statusText));
+      }
+      return res.json()
+    })
+    .then(restaurants => dispatch(returnHomepageSuccess(restaurants)))
+    .catch(error => dispatch(returnHomepageError(error)))
 }
+export const DATA_PUSHER = 'DATA_PUSHER';
+export const dataPusher = (restaurants) => dispatch => {
+  type: DATA_PUSHER,
+  restaurants
 
+}
 
 export const SCHEDULE_MEAL = 'SCHEDULE_MEAL';
 export const scheduleMeal = () => ({
