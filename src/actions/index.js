@@ -1,5 +1,7 @@
 // import thunk from 'redux-thunk';
 // https://github.com/gaearon/redux-thunk
+import axios from 'axios';
+
 import { API_BASE_URL } from '../config';
 // signup
 export const ADD_USER = 'ADD_USER';
@@ -30,34 +32,62 @@ export const returnHomepageRequest = () => ({
 });
 
 export const RETURN_HOMEPAGE_ERROR = 'RETURN_HOMPAGE_ERROR';
-export const returnHomepageError = () => ({
-  type: RETURN_HOMEPAGE_ERROR
+export const returnHomepageError = (err) => ({
+  type: RETURN_HOMEPAGE_ERROR,
+  error: err
 });
 
-export const returnHomepage = () => (dispatch) => {
+// export const returnHomepage = () => (dispatch) => {
   
-  dispatch(returnHomepageRequest());
-  return fetch(`/api/restaurants/`)//incomplete endpoint
-    .then(res => {
-      if (!res.ok) {
-        return dispatch(returnHomepageError(res.statusText));
-      }
-      return res.json()
-    })
-    .then(restaurants => {
-      console.log(restaurants);
-      return dispatch(dataPusher(restaurants))}
-    )
-    // .then(restaurants => dispatch(returnHomepageSuccess(restaurants)))
-    .catch(error => dispatch(returnHomepageError(error)))
+//   dispatch(returnHomepageRequest());
+//   return fetch(`http://localhost:8080/api/restaurants`)//incomplete endpoint
+//     .then(res => {
+//       if (!res.ok) {
+//         return dispatch(returnHomepageError(res.statusText));
+//       }
+//       return res.json()
+//     })
+//     .then(restaurants => {
+//       console.log(restaurants);
+//       return dispatch(dataPusher(restaurants))}
+//     )
+//     // .then(restaurants => dispatch(returnHomepageSuccess(restaurants)))
+//     .catch(error => dispatch(returnHomepageError(error)))
+// }
+
+export function returnHomepage() {
+  return function(dispatch) {
+    const url = 'http://localhost:8080/api/restaurants';
+    return axios.get(url)
+      .then(function(response){
+        if(response.status < 200 || response.status >=300) {
+          var error = new Error(response.statusText);
+          error.response = response;
+        }
+        return response;
+      })
+      .then(function(response) {
+        return dispatch(dataPusher(response.data));
+      })
+      .catch(function(error) {
+        return dispatch(returnHomepageError(error))
+      })
+  }
 }
+
 export const DATA_PUSHER = 'DATA_PUSHER';
-export const dataPusher = (restaurants) => dispatch => {
-  type: DATA_PUSHER,
-  restaurants
+// export const dataPusher = (restaurants) => dispatch => {
+//   type: DATA_PUSHER,
+//   restaurants
 
+// }
+
+export function dataPusher(restaurants) {
+  return {
+    type: DATA_PUSHER,
+    restaurants: restaurants
+  }
 }
-
 export const SCHEDULE_MEAL = 'SCHEDULE_MEAL';
 export const scheduleMeal = () => ({
   type: SCHEDULE_MEAL

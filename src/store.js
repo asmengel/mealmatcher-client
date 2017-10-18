@@ -1,10 +1,17 @@
-import { createStore, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
 import { restaurantReducer } from './reducers';
 import { composeWithDevTools } from 'redux-devtools-extension';
+
+const allReducers = combineReducers({
+  restaurants: restaurantReducer
+})
 
 const enhancer = composeWithDevTools(
   applyMiddleware(thunk)
 )
 
+
+// const store = createStore(allReducers, enhancer);
+// export default store;
 export default createStore(restaurantReducer, enhancer);
