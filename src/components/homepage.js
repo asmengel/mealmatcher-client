@@ -19,7 +19,13 @@ selectRestaurant(event) {
                 <p> above is an unstyled nav bar</p>
 
                 <p> top 20 restaurants will go below </p>
-                <div><button onClick={e => this.selectRestaurant(e)}>More Details</button></div>
+                
+                <div><h3>Capital Grill</h3>
+                <ul><li>Steak and Lobster</li>
+                    <li>20+ dollars per plate</li>
+                    <li>Open reservations<a href="#">Book Now</a></li>
+                    <li> 123 easy street, New York NY, 12345</li>
+                    </ul><button onClick={e => this.selectRestaurant(e)}>More Details</button></div>
                 
                 
                 <div> Local Fav's
