@@ -16,8 +16,8 @@ export function restaurantReducer(state, action) {
     case RETURN_HOMEPAGE_SUCCESS:
     return Object.assign({}, state, {route: "homepage"});
     break;
-    case SELECT_RESTAURANT:
-    return Object.assign({}, state, {route: "restaurant"});
+    case SELECT_RESTAURANT: // just added the restaurants component to see if it will work
+    return Object.assign({}, state, {route: "restaurant", restaurants: action.restaurants});
     break;
     case CREATE_USER:
     return Object.assign({}, state, {route: "signup"});

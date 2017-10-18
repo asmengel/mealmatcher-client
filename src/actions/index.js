@@ -16,10 +16,19 @@ export const signIn = (username, password) => ({
   username, password
 });
 // does not arguments becuse no user data required
+// export const SELECT_RESTAURANT = 'SELECT_RESTAURANT';
+// export const selectRestaurant = () => ({
+//   type: SELECT_RESTAURANT
+// });
+
+// rewrote becauese i want this endpoint to 
 export const SELECT_RESTAURANT = 'SELECT_RESTAURANT';
-export const selectRestaurant = () => ({
-  type: SELECT_RESTAURANT
-});
+export const selectRestaurant = (restaurants) => {
+  return {
+    type: SELECT_RESTAURANT,
+    restaurants,
+  }
+}
 
 export const RETURN_HOMEPAGE_SUCCESS = 'RETURN_HOMPAGE_SUCCESS';
 export const returnHomepageSuccess = () => ({
@@ -36,6 +45,29 @@ export const returnHomepageError = (err) => ({
   type: RETURN_HOMEPAGE_ERROR,
   error: err
 });
+
+
+// single 
+export function returnSingleRestaurant() {
+  return function(dispatch) {
+    const url = 'http://localhost:8080/api/restaurants/:id';
+    return axios.get(url)
+      .then(function(response){
+        if(response.status < 200 || response.status >=300) {
+          var error = new Error(response.statusText);
+          error.response = response;
+        }
+        return response;
+      })
+      .then(function(response) {
+        return dispatch(dataPusher(response.data));
+      })
+      .catch(function(error) {
+        return dispatch(returnHomepageError(error))
+      })
+  }
+}
+ // all
 
 
 export function returnHomepage() {
