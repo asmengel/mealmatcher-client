@@ -35,15 +35,20 @@ export const returnHomepageError = () => ({
 });
 
 export const returnHomepage = () => (dispatch) => {
+  
   dispatch(returnHomepageRequest());
-  return fetch(`mongodb://restaurants:Restaurants@ds125195.mlab.com:25195/restaurants`)//incomplete endpoint
+  return fetch(`/api/restaurants/`)//incomplete endpoint
     .then(res => {
       if (!res.ok) {
         return dispatch(returnHomepageError(res.statusText));
       }
       return res.json()
     })
-    .then(restaurants => dispatch(returnHomepageSuccess(restaurants)))
+    .then(restaurants => {
+      console.log(restaurants);
+      return dispatch(dataPusher(restaurants))}
+    )
+    // .then(restaurants => dispatch(returnHomepageSuccess(restaurants)))
     .catch(error => dispatch(returnHomepageError(error)))
 }
 export const DATA_PUSHER = 'DATA_PUSHER';

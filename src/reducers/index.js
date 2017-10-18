@@ -29,6 +29,7 @@ export const restaurantReducer = (state = initialState, action) => {
   }
   else if (action.type === DATA_PUSHER) {
     return Object.assign({}, state, {
+      route:"homepage",
       restaurants: action.restaurants
     })
   }
