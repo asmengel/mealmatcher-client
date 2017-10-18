@@ -5,9 +5,13 @@ import Header from './header';
 import { signInReducer } from '../reducers';
 export class Signin extends React.Component {
     signIn(event) {
-        //console.log('signin clicked');
+        console.log('signin clicked');
+        console.log(this.refs.username.value);
+        console.log(this.refs.password.value)
         event.preventDefault();
-        this.props.dispatch(signIn());
+        this.props.dispatch(signIn(this.refs.username.value,this.refs.password.value));
+        // this.refs.username.value='';
+        // this.refs.password.value='';
     }
     render() {
 
@@ -17,10 +21,11 @@ export class Signin extends React.Component {
                 <p> header and nav bar above ^^^^^</p>
                 <h3>Log In Page</h3>
                 <form>
-                    <input className="username" placeholder="Username"></input>
-                    <input className="password" placeholder="Password"></input>
+                    <input ref="username" className="username" placeholder="Username"></input>
+                    <input ref="password" className="password" placeholder="Password"></input>
+
+                    <button className="signin-button" onClick={e => this.signIn(e)}>Log In!</button>
                 </form>
-                <button className="signin-button" onClick={e => this.signIn(e)}>Log In!</button>
             </div>
 
         );

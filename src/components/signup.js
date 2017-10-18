@@ -2,6 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { addUser } from '../actions';
 import Header from './header';
+// import {Field, reduxForm, focus} from 'redux-form';
+// import Input from './input';
 export class Signup extends React.Component {
 
     // returnHomepage(event) {
