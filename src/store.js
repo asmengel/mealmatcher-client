@@ -4,7 +4,8 @@ import  restaurantReducer  from './reducers/restaurant';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 const allReducers = combineReducers({
-  restaurants: restaurantReducer
+  restaurants: restaurantReducer,
+  //auth: authReducer
 })
 
 const enhancer = composeWithDevTools(
@@ -14,4 +15,4 @@ const enhancer = composeWithDevTools(
 
 // const store = createStore(allReducers, enhancer);
 // export default store;
-export default createStore(restaurantReducer, enhancer);
+export default createStore(allReducers, enhancer);
