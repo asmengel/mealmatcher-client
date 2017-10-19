@@ -23,10 +23,7 @@ export class Homepage extends React.Component {
             return (
                 <div key={index}>
                     <li>{val.name}</li>
-                    <li>{val.address}</li>
-                    <li>{val.hours}</li>
-                    <li>{val.price}</li>
-                    <li>{val.cuisine}</li>
+                    
                     <button onClick={() => this.selectRestaurant(val)}>More Details</button>
                 </div>
             )
