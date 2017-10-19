@@ -25,6 +25,6 @@ export class Restaurant extends React.Component {
   }
 }
 // mapStateToProps = state => ({
-//   route: state.route
+//   route: state.restaurants.route
 // });
 export default connect()(Restaurant);
