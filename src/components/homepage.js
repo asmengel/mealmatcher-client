@@ -15,7 +15,6 @@ export class Homepage extends React.Component {
     selectRestaurant(restaurant) {
         this.props.dispatch(selectRestaurant(restaurant));
         //logs all restaurants if clicked
-        console.log(this);
     }
 
     // add URL and 
@@ -35,6 +34,7 @@ export class Homepage extends React.Component {
     }
 
     render() {
+        console.log(this);
         //revist line 45 {<ul>{this.props.restaurants && this.lister()}</ul>}
         return (
 

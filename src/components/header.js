@@ -25,7 +25,7 @@ export class Header extends React.Component {
             <div className="header">
                 <h1 className="title">Meal Matcher</h1>
                 <div className="navbar">
-                    <div><button onClick={e => this.returnHomepageSuccess(e)}>Go Back!</button></div>
+                    <div><button onClick={e => window.location.href="http://localhost:3000"}>Go Home</button></div>
                     <div><button onClick={e => this.createUserRoute(e)}>Sign Up!</button></div>
                     <div><button onClick={e => this.signInRoute(e)}>Log In!</button></div>
                 </div>
