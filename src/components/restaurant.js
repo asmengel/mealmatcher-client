@@ -24,6 +24,9 @@ export class Restaurant extends React.Component {
           <ul>Cuisine: {this.props.restaurants.hours}</ul>
           <ul>tel: (123)-456-7890</ul>
           <img src={this.props.restaurant_Image_URL}/>
+          <ul>Eaters: {this.props.restaurants.eaters.map((cv, idx)=>{
+            return <li key={idx}>{cv.name} {cv.email}</li>
+            })}</ul>
         </ul>
       </div>
     );
