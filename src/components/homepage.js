@@ -50,7 +50,7 @@ export class Homepage extends React.Component {
     }
 }
 const mapStateToProps = state => ({
-    restaurants: state.restaurants
+    restaurants: state.restaurants.restaurants
 })
 
 export default connect(mapStateToProps)(Homepage);

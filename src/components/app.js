@@ -41,7 +41,7 @@ export class App extends React.Component {
 };
 
 const mapStateToProps = state => ({
-  route: state.route
+  route: state.restaurants.route
 });
 
 export default connect(mapStateToProps)(App);
