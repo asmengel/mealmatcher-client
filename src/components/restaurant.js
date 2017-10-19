@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Header from './header';
 // import { toggleHomepage } from '../actions';
-import { returnHomeReducer } from '../reducers';
+import { returnHomeReducer } from '../reducers/restaurant';
 import { returnHomepage } from '../actions/routes';
 export class Restaurant extends React.Component {
   // returnHomepage(event) {
@@ -11,16 +11,17 @@ export class Restaurant extends React.Component {
   // }
 
   render() {
+    console.log(this.props.restaurants)
     return (
       <div className="restaurant">
         <Header />
         <p> Nav Bar Above ^^^^^^</p>
         <ul>
-          <h3>{this.props.restaurant.name}</h3>
-          <ul>Hours: {this.props.restaurant.hours}</ul>
-          <ul>Address: {this.props.restaurant.address}</ul>
-          <ul>Price: ${this.props.restaurant.price}</ul>
-          <ul>Cuisine: {this.props.restaurant.hours}</ul>
+          <h3>{this.props.restaurants.name}</h3>
+          <ul>Hours: {this.props.restaurants.hours}</ul>
+          <ul>Address: {this.props.restaurants.address}</ul>
+          <ul>Price: ${this.props.restaurants.price}</ul>
+          <ul>Cuisine: {this.props.restaurants.hours}</ul>
           <ul>tel: (123)-456-7890</ul>
           <img src={this.props.restaurant_Image_URL}/>
         </ul>
@@ -30,7 +31,7 @@ export class Restaurant extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  restaurant: state.restaurants.selectedRestaurant
+  restaurants: state.restaurants.restaurants
 });
 
 export default connect(mapStateToProps)(Restaurant);

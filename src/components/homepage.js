@@ -15,7 +15,7 @@ export class Homepage extends React.Component {
     selectRestaurant(restaurant) {
         this.props.dispatch(selectRestaurant(restaurant));
         //logs all restaurants if clicked
-        console.log(this.props.restaurants);
+        console.log(this);
     }
 
     // add URL and 
