@@ -30,20 +30,21 @@ export const selectRestaurant = (restaurants) => {
   }
 }
 
-export const RETURN_HOMEPAGE_SUCCESS = 'RETURN_HOMPAGE_SUCCESS';
-export const returnHomepageSuccess = () => ({
-  type: RETURN_HOMEPAGE_SUCCESS
-});
-
 export const RETURN_HOMEPAGE_REQUEST = 'RETURN_HOMPAGE_REQUEST';
 export const returnHomepageRequest = () => ({
   type: RETURN_HOMEPAGE_REQUEST
 });
 
+export const RETURN_HOMEPAGE_SUCCESS = 'RETURN_HOMPAGE_SUCCESS';
+export const returnHomepageSuccess = (restaurants) => ({
+  type: RETURN_HOMEPAGE_SUCCESS,
+  restaurants
+});
+
 export const RETURN_HOMEPAGE_ERROR = 'RETURN_HOMPAGE_ERROR';
 export const returnHomepageError = (err) => ({
   type: RETURN_HOMEPAGE_ERROR,
-  error: err
+  error:err
 });
 
 
