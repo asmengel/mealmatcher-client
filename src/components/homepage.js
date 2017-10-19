@@ -11,10 +11,11 @@ export class Homepage extends React.Component {
         console.log('mounting');
         this.props.dispatch(returnHomepage());
     }
-
-    selectRestaurant(event) {
-        event.preventDefault();
-        this.props.dispatch(selectRestaurant());
+   
+    selectRestaurant(restaurant) {
+        this.props.dispatch(selectRestaurant(restaurant));
+        //logs all restaurants if clicked
+        console.log(this.props.restaurants);
     }
 
     // add URL and 
@@ -27,7 +28,7 @@ export class Homepage extends React.Component {
                     <li>{val.hours}</li>
                     <li>{val.price}</li>
                     <li>{val.cuisine}</li>
-                    <button onClick={e => this.selectRestaurant(e)}>More Details</button>
+                    <button onClick={() => this.selectRestaurant(val)}>More Details</button>
                 </div>
             )
         })
@@ -43,7 +44,7 @@ export class Homepage extends React.Component {
                 <p> above is an unstyled nav bar</p>
                 <p> top 20 restaurants will go below </p>
                 {<ul>{this.props.restaurants && this.lister()}</ul>}
-
+        
             </div>
         );
 

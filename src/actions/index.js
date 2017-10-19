@@ -23,10 +23,10 @@ export const signIn = (username, password) => ({
 
 // rewrote becauese i want this endpoint to 
 export const SELECT_RESTAURANT = 'SELECT_RESTAURANT';
-export const selectRestaurant = (restaurants) => {
+export const selectRestaurant = (restaurant) => {
   return {
     type: SELECT_RESTAURANT,
-    restaurants,
+    restaurant,
   }
 }
 

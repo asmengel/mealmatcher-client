@@ -16,15 +16,31 @@ export class Restaurant extends React.Component {
         <Header />
         <p> Nav Bar Above ^^^^^^</p>
         <ul>
-          <h3>The World's Greatest Restaurant!! "AKA restaurant name"</h3>
+          <h3>{this.props.restaurant.name}</h3>
+          <ul>Hours: {this.props.restaurant.hours}</ul>
+          <ul>Address: {this.props.restaurant.address}</ul>
+          <ul>Price: ${this.props.restaurant.price}</ul>
+          <ul>Cuisine: {this.props.restaurant.hours}</ul>
+          <ul>tel: (123)-456-7890</ul>
+          <img src={this.props.restaurant_Image_URL}/>
         </ul>
-        <div> Restaurant data will go here "full dump of all db data and links for reservation/ groups etc"
-                </div>
       </div>
     );
   }
 }
-// mapStateToProps = state => ({
-//   route: state.restaurants.route
-// });
-export default connect()(Restaurant);
+
+const mapStateToProps = state => ({
+  restaurant: state.restaurants.selectedRestaurant
+});
+
+export default connect(mapStateToProps)(Restaurant);
+
+/*  hours: req.body.hours,
+        cuisine: req.body.cuisine,
+        price: req.body.price,
+        address: req.body.address,
+        reservation: req.body.reservation,
+        name: req.body.name,
+        restaurant_URL: req.body.restaurant_URL,
+        restaurant_Image_URL: req.body.restaurant_Image_URL
+        */
