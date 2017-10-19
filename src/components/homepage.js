@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Header from './header';
-import { selectRestaurant, dataPusher, returnHomepage } from '../actions';
+import { selectRestaurant, dataPusher, returnHomepage } from '../actions/routes';
 
 // import './homepage.css';
 
