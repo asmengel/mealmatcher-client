@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import Header from './header';
 // import { toggleHomepage } from '../actions';
 import { returnHomeReducer } from '../reducers';
-import { returnHomepage } from '../actions';
+import { returnHomepage } from '../actions/routes';
 export class Restaurant extends React.Component {
   // returnHomepage(event) {
   //   event.preventDefault();

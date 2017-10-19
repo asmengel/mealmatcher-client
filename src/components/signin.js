@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { signIn } from '../actions';
+import { signInRoute } from '../actions';
 import Header from './header';
 import { signInReducer } from '../reducers';
 export class Signin extends React.Component {
@@ -9,7 +9,7 @@ export class Signin extends React.Component {
         console.log(this.refs.username.value);
         console.log(this.refs.password.value)
         event.preventDefault();
-        this.props.dispatch(signIn(this.refs.username.value,this.refs.password.value));
+        this.props.dispatch(signInRoute(this.refs.username.value,this.refs.password.value));
         // this.refs.username.value='';
         // this.refs.password.value='';
     }
