@@ -18,7 +18,7 @@ export class Signup extends React.Component {
         return (
             <div className="signup">
                 <Header />
-                <p> nav bar and title above ^^^^^</p>
+                
                 <h3>Signup for our APP!</h3>
                 <form>
                     <input className="firstname" placeholder="FirstName"></input>

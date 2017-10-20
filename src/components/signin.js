@@ -18,8 +18,8 @@ export class Signin extends React.Component {
         return (
             <div className="signin">
                 <Header />
-                <p> header and nav bar above ^^^^^</p>
-                <h3>Log In Page</h3>
+                
+                <h3>Log In</h3>
                 <form>
                     <input ref="username" className="username" placeholder="Username"></input>
                     <input ref="password" className="password" placeholder="Password"></input>

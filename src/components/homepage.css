@@ -9,3 +9,16 @@ li {
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
 }
+
+.more-details-button {
+    text-decoration: none;
+    color: rgb(39, 24, 170);
+    display: block;
+    margin: 0 auto;
+    transition: .3s background-color;
+    background-color:darkgrey;
+}
+
+.more-details-button:hover {
+    background-color: #005f5f;
+}

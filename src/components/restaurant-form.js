@@ -65,16 +65,16 @@ export class RestaurantForm extends React.Component {
             errorMessage = (<div className="error-message-info">{this.props.error}</div>);
         }
         return (
-            <form onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
+            <form className="whole-form" onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
                 {successMessage}
                 {errorMessage}
                 <Field
-                    name="name" type="text" component={Input} label="First Name" validate={[required, nonEmpty]}
+                     className="name" name="name" type="text" component={Input} label="First Name" validate={[required, nonEmpty]}
                 />
                 <Field
                     name="email" type="text" component={Input} label="Contact Email Address" validate={[required, nonEmpty]}
                 />
-                <button type="submit"> Add info to list!</button>
+                <button className="add-info-button" type="submit"> Add info to list!</button>
             </form>
         );
     }
