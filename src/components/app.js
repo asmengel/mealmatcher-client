@@ -13,7 +13,9 @@ export class App extends React.Component {
     if (this.props.route === 'homepage') {
       return (
         <div>
+          
           <Homepage />
+          
         </div>
       );
     } else if (this.props.route === 'restaurant') {
