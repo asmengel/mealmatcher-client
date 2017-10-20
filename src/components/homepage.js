@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import Header from './header';
 import { selectRestaurant, dataPusher, returnHomepage } from '../actions/routes';
 
-// import './homepage.css';
+import './homepage.css';
 
 export class Homepage extends React.Component {
 
@@ -36,8 +36,8 @@ export class Homepage extends React.Component {
             <div className="homepage">
 
                 {<Header />}
-                <p> above is an unstyled nav bar</p>
-                <p> top 20 restaurants will go below </p>
+                
+                
                 {<ul>{this.props.restaurants && this.lister()}</ul>}
         
             </div>

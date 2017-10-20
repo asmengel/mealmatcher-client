@@ -3,8 +3,7 @@ import AppBar from 'material-ui/AppBar';
 import { connect } from 'react-redux';
 import { signInRoute, createUserRoute, returnHomepageSuccess } from '../actions/routes';
 import { returnHomeReducer, } from '../reducers';
-
-// import './header.css';
+import './header.css';
 
 export class Header extends React.Component {
     returnHomepageSuccess(event) {
@@ -23,14 +22,17 @@ export class Header extends React.Component {
 
     render() {
         return (
-            <div className="header">
-                <h1>Meal Matcher</h1>
-                <div className="navbar"> 
-                    <div><button onClick={e => window.location.href = "http://localhost:3000"}>Go Home</button></div>
-                    <div><button onClick={e => this.createUserRoute(e)}>Sign Up!</button></div>
-                    <div><button onClick={e => this.signInRoute(e)}>Log In!</button></div>
-                </div>
-
+            <div className="container">
+                
+                
+                <nav className="nav"> 
+            <ul>
+                    <li className="home"><button  className="nav-button" onClick={e => window.location.href = "http://localhost:3000"}>Go Home</button></li>
+                    <li className="signUp"><button className="nav-button" onClick={e => this.createUserRoute(e)}>Sign Up!</button></li>
+                    <li className="logIn"><button className="nav-button" onClick={e => this.signInRoute(e)}>Log In!</button></li>
+            </ul>
+                </nav>
+                <h1 id="title">Meal Matcher</h1>
             </div>
         )
     }

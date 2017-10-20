@@ -19,7 +19,7 @@ export class Restaurant extends React.Component {
     return (
       <div className="restaurant">
         <Header />
-        <p> Nav Bar Above ^^^^^^</p>
+        <p></p>
         <ul>
           <h3>{this.props.restaurant.name}</h3>
           <ul>Hours: {this.props.restaurant.hours}</ul>
@@ -27,8 +27,7 @@ export class Restaurant extends React.Component {
           <ul>Price: ${this.props.restaurant.price}</ul>
           <ul>Cuisine: {this.props.restaurant.hours}</ul>
           <ul>tel: (123)-456-7890</ul>
-
-          <ul>Eaters: {this.props.restaurant.eaters.map((cv, idx) => {
+          <ul>People who also want to eat here: {this.props.restaurant.eaters.map((cv, idx) => {
             return <div key={idx}><li >Name: {cv.name} </li>
               <li> Email: {cv.email}</li></div>
           })}</ul>

@@ -4,7 +4,7 @@ import Input from './input';
 import { required, nonEmpty, email } from '../validators';
 import { addEaters, dataPusher } from '../actions/routes';
 import { connect } from 'react-redux';
-
+import './restaurant-form.css';
 export class RestaurantForm extends React.Component {
     onSubmit(values) {
         console.log(values);
