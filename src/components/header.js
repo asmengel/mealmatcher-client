@@ -1,6 +1,7 @@
 import React from 'react';
+import AppBar from 'material-ui/AppBar';
 import { connect } from 'react-redux';
-import { signInRoute, createUserRoute, returnHomepageSuccess} from '../actions/routes';
+import { signInRoute, createUserRoute, returnHomepageSuccess } from '../actions/routes';
 import { returnHomeReducer, } from '../reducers';
 
 // import './header.css';
@@ -23,9 +24,9 @@ export class Header extends React.Component {
     render() {
         return (
             <div className="header">
-                <h1 className="title">Meal Matcher</h1>
-                <div className="navbar">
-                    <div><button onClick={e => window.location.href="http://localhost:3000"}>Go Home</button></div>
+                <h1>Meal Matcher</h1>
+                <div className="navbar"> 
+                    <div><button onClick={e => window.location.href = "http://localhost:3000"}>Go Home</button></div>
                     <div><button onClick={e => this.createUserRoute(e)}>Sign Up!</button></div>
                     <div><button onClick={e => this.signInRoute(e)}>Log In!</button></div>
                 </div>

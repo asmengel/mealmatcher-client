@@ -8,7 +8,6 @@ import { selectRestaurant, dataPusher, returnHomepage } from '../actions/routes'
 export class Homepage extends React.Component {
 
     componentWillMount() {
-        console.log('mounting');
         this.props.dispatch(returnHomepage());
     }
    
@@ -31,7 +30,6 @@ export class Homepage extends React.Component {
     }
 
     render() {
-        console.log(this);
         //revist line 45 {<ul>{this.props.restaurants && this.lister()}</ul>}
         return (
 

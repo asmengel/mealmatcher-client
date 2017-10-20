@@ -11,7 +11,6 @@ export class Restaurant extends React.Component {
   // }
 
   render() {
-    console.log(this.props.restaurants)
     return (
       <div className="restaurant">
         <Header />
