@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Header from './header';
+import RestaurantForm from './restaurant-form';
 // import { toggleHomepage } from '../actions';
 import { returnHomeReducer } from '../reducers/restaurant';
 import { returnHomepage } from '../actions/routes';
@@ -28,6 +29,7 @@ export class Restaurant extends React.Component {
            <li> Email: {cv.email}</li></div>
             })}</ul>
         </ul>
+        <RestaurantForm />
       </div>
     );
   }
