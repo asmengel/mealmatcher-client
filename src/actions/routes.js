@@ -23,17 +23,27 @@ export const signInRoute = () => ({
 
 
 export const SELECT_RESTAURANT = 'SELECT_RESTAURANT';
-export const selectRestaurant = (restaurants) => {
+export const selectRestaurant = (restaurant) => {
   return {
     type: SELECT_RESTAURANT,
-    restaurants,
+    restaurant,
   }
 }
+
 export const DATA_PUSHER = 'DATA_PUSHER';
 export function dataPusher(restaurants) {
+  console.log(restaurants);
   return {
     type: DATA_PUSHER,
     restaurants: restaurants
+  }
+}
+
+export const ADD_EATERS = 'ADD_EATERS'
+export function addEaters(eater){
+  return {
+    type: ADD_EATERS,
+    eater,
   }
 }
 
@@ -53,6 +63,7 @@ export const returnHomepageError = (err) => ({
   type: RETURN_HOMEPAGE_ERROR,
   error:err
 });
+
 
 
  // single logic
